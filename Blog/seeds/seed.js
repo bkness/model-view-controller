@@ -28,10 +28,6 @@ const { faker } = require('@faker-js/faker');
 const path = require("path")
 const blogs = require('./blogData.json')
 
-// FOR RUNNING INSIDE THE TECHBLOG CHALLENGE
-// npm i @faker-js/faker
-// Run createSeeds first, then run seed. Both files must be in seeds dir in root of project
-
 const RANDOMUSERS = [];
 
 function createRandomUser() {
