@@ -63,7 +63,7 @@ function createRandomBlogs() {
 }
 
 Array.from({ length: 15 }).forEach(() => {
-    POSTS.push(createRandomBlogs());
+    BLOGS.push(createRandomBlogs());
 });
 
 console.log(BLOGS)
