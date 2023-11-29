@@ -13,7 +13,7 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money"></span>
+        <span role="img" aria-label="blog">📝</span>
         <a href="/">The Blog</a>
       </h1>
       <nav>
@@ -22,7 +22,8 @@
         <a href="/dashboard">dashboard</a> | 
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="../login.handlebars">Login</a>
+        <a href="../blog.handlebars">Post</a>
         {{/if}}
       </nav>
     </header>
