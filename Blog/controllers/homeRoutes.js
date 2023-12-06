@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const postData = await Blog.findAll({
-            include: [User]
+            include: [User],
         })
 
         const blogs = postData.map(blog => blog.get({ plain: true })) // session of object is global to backend
@@ -17,5 +17,13 @@ router.get('/', async (req, res) => {
         res.status(500).json(err.message)
     }
 })
+
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('homepage');
+        return;
+    }
+    res.render('login')
+});
 
 module.exports = router 
