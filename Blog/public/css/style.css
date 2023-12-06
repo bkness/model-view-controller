@@ -1,0 +1,10 @@
+#logout {
+    background: none;
+    border: none;
+    color: rgb(18, 114, 156);
+    cursor: pointer;
+}
+
+nav {
+   font-size: 20px;
+}
