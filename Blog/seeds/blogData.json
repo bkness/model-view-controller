@@ -1,18 +1,17 @@
 [
-    {
-      "title": "Introduction to Sequelize",
-      "contentPost": "In this blog post, we will explore the basics of Sequelize, a powerful Node.js ORM for database interactions.",
-      "dateCreated": "2023-04-05T08:15:00Z"
-    },
-    {
-      "title": "Building RESTful APIs with Express and Sequelize",
-      "contentPost": "Learn how to create RESTful APIs using Express.js and Sequelize. We'll cover routes, controllers, and database interactions.",
-      "dateCreated": "2023-05-10T16:20:00Z"
-    },
-    {
-      "title": "Advanced Sequelize Techniques",
-      "contentPost": "Explore advanced techniques and features of Sequelize, including associations, migrations, and query optimization.",
-      "dateCreated": "2023-06-25T11:30:00Z"
-    }
-  ]
-  
+  {
+    "title": "Introduction to Sequelize",
+    "contentPost": "In this blog post, we will explore the basics of Sequelize, a powerful Node.js ORM for database interactions.",
+    "dateCreated": "2023-04-05T08:15:00Z"
+  },
+  {
+    "title": "Building RESTful APIs with Express and Sequelize",
+    "contentPost": "Learn how to create RESTful APIs using Express.js and Sequelize. We'll cover routes, controllers, and database interactions.",
+    "dateCreated": "2023-05-10T16:20:00Z"
+  },
+  {
+    "title": "Advanced Sequelize Techniques",
+    "contentPost": "Explore advanced techniques and features of Sequelize, including associations, migrations, and query optimization.",
+    "dateCreated": "2023-06-25T11:30:00Z"
+  }
+]

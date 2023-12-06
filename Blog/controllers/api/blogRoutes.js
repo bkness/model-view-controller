@@ -17,9 +17,9 @@ router.get('/', withAuth, async (req, res) => {
       const blogs = blogData.map((blog) =>
         blog.get({ plain: true })
       );
-      //res.json(breweries);  
+      //res.json(blogs);  
       res.render('homepage', {
-        breweries,
+        blogs,
         logged_in: true
       });
     } catch (err) {
@@ -27,7 +27,24 @@ router.get('/', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
   });
-
-  router.post('')
+  router.post('/blogPost/', withAuth, async (req, res) => {
+    console.log('in post');
+    console.log(req.body);
+  
+    try {
+      const blogData = await Blog.create({
+        title: req.body.title,
+        contentPost: req.body.contentPost,
+        dateCreated: req.body.dateCreated,
+        // user_id: req.session.user_id, // Assuming user_id is stored in the session
+      });
+  
+      res.status(200).json(blogData);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+  
 
 module.exports = router;

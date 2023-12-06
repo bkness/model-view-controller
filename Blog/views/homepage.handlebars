@@ -1,12 +1,11 @@
     <h1>Blog Posts</h1>
 
     <div id="blog-posts">
-        {{#each blogPosts}}
-            <div id="blog-post">
+        {{#each blogs}}
                 <h2>{{title}}</h2>
                 <p>{{contentPost}}</p>
-                <p>Published on {{formatDate dateCreated}}</p>
-            </div>
+                {{!-- <p>Published on {{formatDate dateCreated}}</p> --}}
+
         {{/each}}
     </div>
 
