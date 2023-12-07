@@ -3,7 +3,7 @@ const { User, Blog, Comment } = require('../models');
 // const seedUser = require('./userData.json');
 const blogData = require('./blogData.json');
 // const commentData = require("./commentData.json");
-
+// put users first then blog then comments 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
 

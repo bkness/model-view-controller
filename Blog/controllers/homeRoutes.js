@@ -18,6 +18,28 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('comment/:id', async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                },
+            ],
+        });
+
+        const blog = blogData.get({ plain: true });
+        res.render('comment', {
+            blog,
+            logged_in: true,
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('homepage');
