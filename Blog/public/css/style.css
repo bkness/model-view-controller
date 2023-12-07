@@ -14,6 +14,7 @@ header {
   font-family: 'Orbitron';
   background-color: rgb(49, 46, 46);
   color: yellow;
+  height: 75px;
 }
 
 main {
@@ -28,7 +29,7 @@ footer {
   justify-content: flex-end;
 }
 
- nav {
+nav {
   font-size: 20px;
 }
 
@@ -39,10 +40,13 @@ a {
 
 #blog-label {
   background-color: rgb(215, 215, 215);
+  width: 478px;
+  border-radius: 5px;
 }
 
-#blog-content{
+#blog-content {
   background-color: rgb(215, 215, 215);
+  border-radius: 5px;
 }
 
 #comment-body {
@@ -50,12 +54,14 @@ a {
 }
 
 #blog-comment {
-  background: #312e1e;;
+  background: #312e1e;
+  ;
 }
 
 #blog-comment a {
   color: #caca9d;
 }
+
 #blog-comment a:hover {
   color: #f1f198;
 }
@@ -64,6 +70,12 @@ a {
   background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
   color: #b7b756;
   padding: 20px 7px 10px 15px;
+  height: 350px;}
+
+
+
+#blog-post-text {
+margin-left: 15px;
 }
 
 h1,
@@ -71,8 +83,11 @@ h2,
 p,
 #blog-comment {
   padding: 3px;
-  margin: 0;
   font-family: 'orbitron';
+}
+
+i, h2 {
+  padding: 10px;
 }
 
 #log-text {
@@ -80,38 +95,39 @@ p,
 }
 
 #logout {
-   font-size: 20px;
-   background: none;
-   border: none;
-   color: yellow;
-   cursor: pointer;
-   font-family: 'Orbitron'
- }
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: yellow;
+  cursor: pointer;
+  font-family: 'Orbitron'
+}
 
- .login-form {
-   width: 50%;
-   padding: 70px;
-   margin: 20px;
- }
+.login-form {
+  width: 50%;
+  padding: 70px;
+  margin: 20px;
+}
 
- .signup-form {
-   width: 50%;
-   padding: 70px;
-   margin: 20px;
- }
+.signup-form {
+  width: 50%;
+  padding: 70px;
+  margin: 20px;
+}
 
- #corner {
-   padding: 15px;
+#corner {
+  padding: 15px;
   color: yellow;
   text-align: center;
- }
+}
 
- #signup-container, #login-container {
+#signup-container,
+#login-container {
   background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
-  margin-top: 75px;
+  margin-top: 150px;
   border: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
- }
+}
 
 main {
   background: linear-gradient(to right, #caca9d, #a09455);
@@ -119,79 +135,118 @@ main {
 }
 
 #createBlogSubmit {
-padding: 15px;
-width: 40%;
-color: #312e1e;
-background-color: rgb(230, 230, 21);
-font-size: 20px;
-border-radius: 5px;
-border: none;
+  padding: 15px;
+  width: 30%;
+  color: #312e1e;
+  background-color: rgb(230, 230, 21);
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
 }
 
 #createBlogSubmit:hover {
   background-color: #fefe00;
 }
 
- #signup-submit,
- #login-submit {
-   padding: 15px;
-   margin-top: 15px;
-   width: 100%;
-   color: #312e1e;
-   background-color:  #fefe00;
-   border-radius: 5px;
-   border: none;
- }
+#comment-submit {
+  color: #312e1e;
+  background-color: #cfcf16;
+  border-radius: 5px;
+  padding: 12px;
+  margin-top: 10px;
+  width: 30%;
+  border: none;
+  font-size: 20px;
+}
 
- #signup-submit,
- #login-submit {
+
+#signup-submit,
+#login-submit {
+  padding: 15px;
+  margin-top: 15px;
+  width: 100%;
+  color: #312e1e;
+  background-color: #fefe00;
+  border-radius: 5px;
+  border: none;
+}
+
+#signup-submit,
+#login-submit {
   background-color: #cfcf16;
 }
- 
+
+#comment-submit:hover {
+  background-color: #ffff02;
+}
+
 #signup-submit:hover {
   background-color: #ffff02;
 }
 
- #login-submit:hover {
+#login-submit:hover {
   background-color: #ffff02;
 }
 
- .form-label {
-   font-weight: bold;
- }
+.form-label {
+  font-weight: bold;
+}
 
- .row {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
- }
+#comment-text {
+  background-color: rgb(215, 215, 215);
+  border-radius: 5px;
+  margin-top: 7px;
+}
 
- .col-md-6 {
-   border: 1px solid #ccc;
-   border-radius: 8px;
- }
+#comment-form {
+  background-color: #312e1e;
+  padding: 10px 0 10px 15px;
+margin: 210px 0px 10px 150px;
+  border-radius: 3px;
+  color: yellow;
+  height: 165px;
+  width: 1350px;
+  border: solid;
+  border-color: black;
+}
 
- .form-control {
-   font-size: 16px;
-   padding: 10px;
-   margin-bottom: 10px;
- }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
- #blog-post {
-   border: solid;
-   border-radius: 5px;
-   margin-bottom: 40px;
-   height: auto;
- }
+.col-md-6 {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
 
- #blog-title {
-   border: thin;
-   background-color: #312e1e;
-   color: yellow;
-   display: flex;
-   justify-content: space-between;
-   height: auto
- }
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#blog-post {
+  border: solid;
+  margin: 10px 0 20px 150px;
+  border-radius: 5px;
+  height: auto;
+  width: 1350px;
+}
+
+.top-container {
+  margin-top: 20px;
+}
+
+#blog-title {
+  border: thin;
+  background-color: #312e1e;
+  color: yellow;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
 
 .blog-card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -212,4 +267,3 @@ border: none;
   margin-bottom: 16px;
   box-sizing: border-box;
 }
-
