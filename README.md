@@ -35,6 +35,6 @@ If you have any questions you can email me at kbrandon863@gmail.com if you want 
 
 
 ## Preview
-![localhost_3001_ (1)](https://github.com/bkness/model-view-controller/assets/123907755/d0c01cb2-729d-4bfe-b4f3-08de42c481f7)
+![localhost_3001_ (1)](https://github.com/bkness/model-view-controller/assets/123907755/debab274-bd5a-440c-9d79-e5e25f568de3)
 
 ![localhost_3001_login](https://github.com/bkness/model-view-controller/assets/123907755/d2528381-e55e-4197-bfcf-e67130fd2c4f)

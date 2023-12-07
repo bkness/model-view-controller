@@ -280,7 +280,7 @@
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-  [type='search'] {
+  [type='search']::-webkit-search-decoration {
     -webkit-appearance: textfield;
     /* 1 */
     outline-offset: -2px;

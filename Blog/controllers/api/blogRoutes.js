@@ -36,7 +36,7 @@ router.get('/', withAuth, async (req, res) => {
         title: req.body.title,
         contentPost: req.body.contentPost,
         dateCreated: req.body.dateCreated,
-        // user_id: req.session.user_id, // Assuming user_id is stored in the session
+
       });
   
       res.status(200).json(blogData);

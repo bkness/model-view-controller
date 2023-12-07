@@ -1,0 +1,19 @@
+<div class="comment-card">
+    <div class="comment-card-header">
+        <h1>{{blog.title}}</h1>
+        <p><i>Published on {{format_date blog.dateCreated}}</i></p> <br>
+    </div>
+    <div id="comment-body">
+        <p>
+        <h2> <b>{{blog.contentPost}}</b></h2><br>
+            </p>
+            <p>
+                <label id="blog-id" hidden="hidden"> {{blog.id}} </label>
+            </p>
+            <div class="blog-comment">
+                <label for="comment-input">Comment:</label></br>
+                <textarea class="input" style="width: 75%; height: 50px" id="comment-text"></textarea></br>
+                <button id="comment-submit" type="submit" class="comment-card-submit">Submit</button>
+            </div>
+    </div>
+</div>
