@@ -1,17 +1,18 @@
+ <main id="login-main">
 <div class="row">
   <div class="col-md-6" id="login-container">
     <h2 id="corner">Login</h2>
     <form class="form login-form" id="login-form">
       <div class="mb-3">
-        <label for="email-login" class="form-label">Email:</label>
+        <label for="email-login" class="form-label" id="log-text">Email:</label>
         <input class="form-control" type="text" id="email-login" />
       </div>
       <div class="mb-3">
-        <label for="password-login" class="form-label">Password:</label>
+        <label for="password-login" class="form-label" id="log-text">Password:</label>
         <input class="form-control" type="password" id="password-login" />
       </div>
       <div class="mb-3">
-        <button class="btn btn-primary" type="submit" id="login-submit">Login</button>
+        <button class="btn btn-primary" type="submit" id="login-submit" id="log-text">Login</button>
       </div>
     </form>
   </div>
@@ -19,15 +20,15 @@
     <h2 id="corner">Signup</h2>
     <form class="form signup-form" id="signup-form">
       <div class="mb-3">
-        <label for="name-signup" class="form-label">User Name:</label>
+        <label for="name-signup" class="form-label" id="log-text">User Name:</label>
         <input class="form-control" type="text" id="name-signup" />
       </div>
       <div class="mb-3">
-        <label for="email-signup" class="form-label">Email:</label>
+        <label for="email-signup" class="form-label" id="log-text">Email:</label>
         <input class="form-control" type="text" id="email-signup" />
       </div>
       <div class="mb-3">
-        <label for="password-signup" class="form-label">Password:</label>
+        <label for="password-signup" class="form-label" id="log-text">Password:</label>
         <input class="form-control" type="password" id="password-signup" />
       </div>
       <div class="mb-3">
@@ -36,5 +37,6 @@
     </form>
   </div>
 </div>
+</main>
 
 <script src="/js/login.js"></script>

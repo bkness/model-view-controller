@@ -1,13 +1,14 @@
-<h1>Blog Posts</h1>
-
+<b>
+    <h1>Blog Posts</h1>
+</b><br>
 <div id="blogs">
     {{#each blogs}}
     <div id="blog-post">
         <div id="blog-title">
             <h2>{{title}} </h2>
-             <p><i>Published on {{format_date dateCreated}} </i> </p> 
+            <p><i>Published on {{format_date dateCreated}} </i> </p>
         </div>
-        <div class="blog-body">
+        <div class="blog-body" id="content-body">
             <p>{{contentPost}}</p>
         </div>
         <div id="blog-comment">

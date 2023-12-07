@@ -1,18 +1,91 @@
- #header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 10px;
- }
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
- #logout {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-family: 'Orbitron';
+  background-color: rgb(49, 46, 46);
+  color: yellow;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  background-color: rgb(49, 46, 46);
+  color: yellow;
+  padding: 10px;
+  justify-content: flex-end;
+}
+
+ nav {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: yellow;
+}
+
+#blog-label {
+  background-color: rgb(215, 215, 215);
+}
+
+#blog-content{
+  background-color: rgb(215, 215, 215);
+}
+
+#comment-body {
+  flex: 1;
+}
+
+#blog-comment {
+  background: #312e1e;;
+}
+
+#blog-comment a {
+  color: #caca9d;
+}
+#blog-comment a:hover {
+  color: #f1f198;
+}
+
+#content-body {
+  background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
+  color: #b7b756;
+  padding: 20px 7px 10px 15px;
+}
+
+h1,
+h2,
+p,
+#blog-comment {
+  padding: 3px;
+  margin: 0;
+  font-family: 'orbitron';
+}
+
+#log-text {
+  color: yellow;
+}
+
+#logout {
    font-size: 20px;
    background: none;
    border: none;
-   color: #0000EE;
+   color: yellow;
    cursor: pointer;
-   font-family: 'Times New Roman', Times, serif;
-   margin-left: 10px;
+   font-family: 'Orbitron'
  }
 
  .login-form {
@@ -21,20 +94,66 @@
    margin: 20px;
  }
 
- .signup-form{
-  width: 50%;
-  padding: 70px;
-  margin: 20px;
+ .signup-form {
+   width: 50%;
+   padding: 70px;
+   margin: 20px;
  }
 
-#corner {
- padding: 15px;
+ #corner {
+   padding: 15px;
+  color: yellow;
+  text-align: center;
+ }
 
+ #signup-container, #login-container {
+  background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
+  margin-top: 75px;
+  border: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ }
+
+main {
+  background: linear-gradient(to right, #caca9d, #a09455);
+  height: 87vh;
 }
-#signup-submit, #login-submit {
-padding: 15px;
 
+#createBlogSubmit {
+padding: 15px;
 width: 40%;
+color: #312e1e;
+background-color: rgb(230, 230, 21);
+font-size: 20px;
+border-radius: 5px;
+border: none;
+}
+
+#createBlogSubmit:hover {
+  background-color: #fefe00;
+}
+
+ #signup-submit,
+ #login-submit {
+   padding: 15px;
+   margin-top: 15px;
+   width: 100%;
+   color: #312e1e;
+   background-color:  #fefe00;
+   border-radius: 5px;
+   border: none;
+ }
+
+ #signup-submit,
+ #login-submit {
+  background-color: #cfcf16;
+}
+ 
+#signup-submit:hover {
+  background-color: #ffff02;
+}
+
+ #login-submit:hover {
+  background-color: #ffff02;
 }
 
  .form-label {
@@ -58,18 +177,6 @@ width: 40%;
    margin-bottom: 10px;
  }
 
- nav {
-   font-size: 20px;
-   display: flex;
-   justify-content: flex-end;
-   margin-top: 30px;
- }
-
- a {
-   margin-left: 20px;
-   text-decoration: none;
- }
-
  #blog-post {
    border: solid;
    border-radius: 5px;
@@ -79,23 +186,30 @@ width: 40%;
 
  #blog-title {
    border: thin;
-   background-color: #1b89bc;
+   background-color: #312e1e;
+   color: yellow;
    display: flex;
    justify-content: space-between;
    height: auto
  }
 
- h1,
- h2,
- p,
- #blog-comment {
-   padding: 3px;
-   margin: 0;
- }
+.blog-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
+}
 
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+}
 
-
-
-
-
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
 

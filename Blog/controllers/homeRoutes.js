@@ -10,7 +10,9 @@ router.get('/', async (req, res) => {
 
         const blogs = postData.map(blog => blog.get({ plain: true })) // session of object is global to backend
         res.render('homepage', {
-            blogs, logged_in: req.session.logged_in
+            blogs, 
+            logged_in: req.session.logged_in,
+            loginPage: false
         })
     } catch (err) {
         console.log(err.message)
