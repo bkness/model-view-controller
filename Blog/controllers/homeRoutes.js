@@ -39,6 +39,14 @@ router.get('comment/:id', async (req, res) => {
     }
 });
 
+router.get('/dashboard', withAuth, (req, res) => {
+    const userData = req.session.user;
+
+    res.render('dashboard', {
+        user: userData,
+        logged_in: true
+    });
+});
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

@@ -1,21 +1,19 @@
 <div class="blog-card">
     <div class="blog-card-header">
         <h1>{{blog.title}}</h1>
-    </div>
-    <div id="blog-body">
-        <h2>{{blog.title}}</h2>
         <p><i>Published on {{format_date blog.dateCreated}}</i></p> 
     </div>
+    <div id="blog-body">
     <p>
-        <b>{{blog.contentPost}}</b><br>
+       <h2> <b>{{blog.contentPost}}</b><br></h3>
     </p>
     <p>
-        <label id="b" hidden="hidden"> {{blog.id}} </label>
+        <label id="blog-id" hidden="hidden"> {{blog.id}} </label>
     </p>
     <div class="blog-comment">
         <label for="bloginput">Comment:</label></br>
         <textarea class="input" style="width: 75%; height: 50px" id="blog-text"></textarea></br>
-        <button id="blogCommentSubmit" type="submit" class="btn btn-primary">Submit</button>
+        <button id="blog-comment-submit" type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>
 </div>
