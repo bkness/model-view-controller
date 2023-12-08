@@ -2,7 +2,7 @@
 
 
 ## Description 
-I am demonstrating and challenging my grasp on relationships between client and server side applications. I am creating models seeds controllers used with express routers and sequelize. 
+I am demonstrating and challenging my grasp on relationships between client and server side applications. I am creating models seeds controllers used with express routers and sequelize.. 
 
 ## Table of Contents 📝
 
