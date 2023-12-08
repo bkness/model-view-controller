@@ -1,10 +1,268 @@
-#logout {
-    background: none;
-    border: none;
-    color: rgb(18, 114, 156);
-    cursor: pointer;
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  font-family: 'Orbitron';
+  background-color: rgb(49, 46, 46);
+  color: yellow;
+  height: 75px;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  background-color: rgb(49, 46, 46);
+  color: yellow;
+  padding: 10px;
+  justify-content: flex-end;
 }
 
 nav {
-   font-size: 20px;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: yellow;
+}
+
+#blog-label {
+  background-color: rgb(215, 215, 215);
+  width: 478px;
+  border-radius: 5px;
+}
+
+#blog-content {
+  background-color: rgb(215, 215, 215);
+  border-radius: 5px;
+}
+
+#comment-body {
+  flex: 1;
+}
+
+#blog-comment {
+  background: #312e1e;
+}
+
+#blog-comment a {
+  color: #caca9d;
+}
+
+#blog-comment a:hover {
+  color: #f1f198;
+}
+
+#content-body {
+  background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
+  color: #b7b756;
+  padding: 20px 7px 10px 15px;
+  height: 350px;}
+
+
+
+#blog-post-text {
+margin-left: 15px;
+}
+
+h1,
+h2,
+p,
+#blog-comment {
+  padding: 3px;
+  font-family: 'orbitron';
+}
+
+i, h2 {
+  padding: 10px;
+}
+
+#log-text {
+  color: yellow;
+}
+
+#logout {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: yellow;
+  cursor: pointer;
+  font-family: 'Orbitron'
+}
+
+.login-form {
+  width: 50%;
+  padding: 70px;
+  margin: 20px;
+}
+
+.signup-form {
+  width: 50%;
+  padding: 70px;
+  margin: 20px;
+}
+
+#corner {
+  padding: 15px;
+  color: yellow;
+  text-align: center;
+}
+
+#signup-container,
+#login-container {
+  background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
+  margin-top: 150px;
+  border: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+main {
+  background: linear-gradient(to right, #caca9d, #a09455);
+  height: 87vh;
+}
+
+#createBlogSubmit {
+  padding: 15px;
+  width: 30%;
+  color: #312e1e;
+  background-color: rgb(230, 230, 21);
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+#createBlogSubmit:hover {
+  background-color: #fefe00;
+}
+
+#comment-submit {
+  color: #312e1e;
+  background-color: #cfcf16;
+  border-radius: 5px;
+  padding: 12px;
+  margin-top: 10px;
+  width: 30%;
+  border: none;
+  font-size: 20px;
+}
+
+
+#signup-submit,
+#login-submit {
+  padding: 15px;
+  margin-top: 15px;
+  width: 100%;
+  color: #312e1e;
+  background-color: #fefe00;
+  border-radius: 5px;
+  border: none;
+}
+
+#signup-submit,
+#login-submit {
+  background-color: #cfcf16;
+}
+
+#comment-submit:hover {
+  background-color: #ffff02;
+}
+
+#signup-submit:hover {
+  background-color: #ffff02;
+}
+
+#login-submit:hover {
+  background-color: #ffff02;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+#comment-text {
+  background-color: rgb(215, 215, 215);
+  border-radius: 5px;
+  margin-top: 7px;
+}
+
+#comment-form {
+  background-color: #312e1e;
+  padding: 10px 0 10px 15px;
+margin: 210px 0px 10px 150px;
+  border-radius: 3px;
+  color: yellow;
+  height: 165px;
+  width: 1350px;
+  border: solid;
+  border-color: black;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.col-md-6 {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#blog-post {
+  border: solid;
+  margin: 20px 0 20px 150px;
+  border-radius: 5px;
+  height: auto;
+  width: 1350px;
+}
+
+.top-container {
+  margin-top: 20px;
+}
+
+#blog-title {
+  border: thin;
+  background-color: #312e1e;
+  color: yellow;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+
+.blog-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #1f1e13, #4d4c3c);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
 }

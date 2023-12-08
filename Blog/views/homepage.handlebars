@@ -1,12 +1,19 @@
-    <h1>Blog Posts</h1>
-
-    <div id="blog-posts">
-        {{#each blogPosts}}
-            <div id="blog-post">
-                <h2>{{title}}</h2>
-                <p>{{contentPost}}</p>
-                <p>Published on {{formatDate dateCreated}}</p>
-            </div>
-        {{/each}}
+<b>
+    <h1 id="blog-post-text">Blog Posts</h1>
+</b><br>
+<div id="blogs">
+    {{#each blogs}}
+    <div class="top-container" id="blog-post">
+        <div id="blog-title">
+            <h2>{{title}} </h2>
+            <p><i>Published on {{format_date dateCreated}} </i> </p>
+        </div>
+        <div class="blog-body" id="content-body">
+            <p>{{contentPost}}</p>
+        </div>
+        <div id="blog-comment">
+            <a href="/api/comment/{{id}}">Comment</a>
+        </div>
     </div>
-
+    {{/each}}
+</div>
