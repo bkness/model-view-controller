@@ -10,7 +10,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   font-family: 'Orbitron';
   background-color: rgb(49, 46, 46);
   color: yellow;
@@ -55,7 +55,6 @@ a {
 
 #blog-comment {
   background: #312e1e;
-  ;
 }
 
 #blog-comment a {
@@ -229,7 +228,7 @@ margin: 210px 0px 10px 150px;
 
 #blog-post {
   border: solid;
-  margin: 10px 0 20px 150px;
+  margin: 20px 0 20px 150px;
   border-radius: 5px;
   height: auto;
   width: 1350px;
