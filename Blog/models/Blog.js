@@ -18,13 +18,16 @@ Blog.init({
         }
     },
     title: {
-        type: DataTypes.STRING, allowNull: false,
+        type: DataTypes.STRING, 
+        allowNull: false,
     },
     contentPost: {
-        type: DataTypes.TEXT, allowNull: false,
+        type: DataTypes.TEXT, 
+        allowNull: false,
     },
     dateCreated: {
-        type: DataTypes.DATE, defaultValue: DataTypes.NOW,
+        type: DataTypes.DATE, 
+        defaultValue: DataTypes.NOW, // takes care of date created for you
     },
 }, {
     sequelize

@@ -89,7 +89,7 @@ i, h2 {
   padding: 10px;
 }
 
-#log-text {
+#log-text, #blog-text {
   color: yellow;
 }
 
@@ -133,7 +133,11 @@ main {
   height: 87vh;
 }
 
-#createBlogSubmit {
+#create-post-button {
+  margin: 30px 0 10px 40%
+}
+
+#createBlogSubmit, #create-post-button {
   padding: 15px;
   width: 30%;
   color: #312e1e;

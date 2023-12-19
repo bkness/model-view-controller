@@ -1,23 +1,28 @@
-
 const blogComment = async (event) => {
-    event.preventDefault();
-  
-    const blog_id = document.querySelector('#blogid').innerHTML;
-    const comment = document.querySelector('#pubcomment').value.trim();
-  
-    if (comment && blog_id) {
-      const response = await fetch(`/api/breweries/${blog_id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ comment }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/api/homepage');
-      } else {
-        alert('Failed to add comment');
-      }
-    }
-  };
+  event.preventDefault();
 
-  document.querySelector('#blogcommentsubmit').addEventListener('click', enterblog);
+  const blogIdInput = document.querySelector('#blog-id');
+  const blog_id = blogIdInput ? blogIdInput.value : null;
+  const comment = document.querySelector('#comment-text').value.trim();
+
+  console.log('Blog ID:', blog_id);
+  console.log('Comment:', comment);
+
+  if (comment && blog_id) {
+      const response = await fetch(`/api/blog/comment`, {
+          method: 'POST',
+          body: JSON.stringify({ comment, blog_id }),
+          headers: { 'Content-Type': 'application/json' },
+      });
+
+      console.log('Response:', response);
+
+      if (response.ok) {
+          document.location.reload();
+      } else {
+          alert('Failed to add comment');
+      }
+  }
+};
+
+document.querySelector('#comment-submit').addEventListener('click', blogComment);

@@ -26,10 +26,12 @@ Comment.init({
         }
     },
     commentPost: {
-        type: DataTypes.TEXT, allowNull: false
+        type: DataTypes.TEXT, 
+        allowNull: false
     },
     dateCreated: {
-        type: DataTypes.DATE, defaultValue: DataTypes.NOW
+        type: DataTypes.DATE, 
+        defaultValue: DataTypes.NOW
     }
 }, {
     sequelize

@@ -20,17 +20,30 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('comment/:id', async (req, res) => {
+router.get('/post', async (req, res) => {
+        res.render('blog-post', {
+            logged_in: true
+        });
+    });
+
+// GET one blog
+router.get('/blog/:id', async (req, res) => {
+    console.log("its hitting")
     try {
-        const blogData = await Blog.findByPk(req.params.id, {
+        let blogData = await Blog.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
                 },
+                {
+                    model: Comment,
+                    include: [User],
+                },
             ],
         });
-
-        const blog = blogData.get({ plain: true });
+        
+        let blog = blogData.get({ plain:true })
+        console.log(blogData)
         res.render('comment', {
             blog,
             logged_in: true,
@@ -40,6 +53,61 @@ router.get('comment/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/comment', withAuth, async (req, res) => {
+    try {
+        await Comment.create({
+            commenPost: req.body.commentPost,
+            user_id: req.session.user_id,
+            blog_id: req.params.id,
+        });
+
+        const comments = commentData.map(comment => comment.get({ plain: true })) 
+        res.render('comment', {
+            comments, 
+            logged_in: req.session.logged_in,
+            loginPage: false
+        })
+        
+        res.status(201).end();
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+router.get('/dashboard', async (req, res) => {
+    try {
+        const user_id = req.session.user_id;
+
+        if (!user_id) {
+            console.error('User ID not found in session');
+            return res.status(401).send('Unauthorized');
+        }
+
+
+        const postData = await Blog.findAll({
+            where: { user_id },
+            include: [User],
+        })
+
+        const blogs = postData.map(blog => blog.get({ plain: true })) // session of object is global to backend
+        res.render('dashboard', {
+            blogs, 
+            logged_in: req.session.logged_in,
+            loginPage: false
+        })
+    } catch (err) {
+        console.log(err.message)
+        res.status(500).json(err.message)
+    }
+})
+
+router.get('/post', async (req, res) => {
+        res.render('blog-post', {
+            logged_in: true
+        });
+    });
 
 router.get('/dashboard', withAuth, (req, res) => {
     const userData = req.session.user;
