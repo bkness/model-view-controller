@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 
         const blogs = postData.map(blog => blog.get({ plain: true })) // session of object is global to backend
         res.render('homepage', {
-            blogs, 
+            blogs,
             logged_in: req.session.logged_in,
             loginPage: false
         })
@@ -21,10 +21,10 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/post', async (req, res) => {
-        res.render('blog-post', {
-            logged_in: true
-        });
+    res.render('blog-post', {
+        logged_in: true
     });
+});
 
 // GET one blog
 router.get('/blog/:id', async (req, res) => {
@@ -41,38 +41,17 @@ router.get('/blog/:id', async (req, res) => {
                 },
             ],
         });
-        
-        let blog = blogData.get({ plain:true })
+
+        let blog = blogData.get({ plain: true })
         console.log(blogData)
         res.render('comment', {
             blog,
             logged_in: true,
+            session: req.session,
         });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
-    }
-});
-
-router.get('/comment', withAuth, async (req, res) => {
-    try {
-        await Comment.create({
-            commenPost: req.body.commentPost,
-            user_id: req.session.user_id,
-            blog_id: req.params.id,
-        });
-
-        const comments = commentData.map(comment => comment.get({ plain: true })) 
-        res.render('comment', {
-            comments, 
-            logged_in: req.session.logged_in,
-            loginPage: false
-        })
-        
-        res.status(201).end();
-    } catch (err) {
-        console.log(err.message);
-        res.status(500).send("Internal Server Error");
     }
 });
 
@@ -91,11 +70,11 @@ router.get('/dashboard', async (req, res) => {
             include: [User],
         })
 
-        const blogs = postData.map(blog => blog.get({ plain: true })) // session of object is global to backend
+        const blogs = postData.map(blog => blog.get({ plain: true }))
         res.render('dashboard', {
-            blogs, 
+            blogs,
             logged_in: req.session.logged_in,
-            loginPage: false
+            loginPage: false,
         })
     } catch (err) {
         console.log(err.message)
@@ -104,18 +83,64 @@ router.get('/dashboard', async (req, res) => {
 })
 
 router.get('/post', async (req, res) => {
-        res.render('blog-post', {
-            logged_in: true
-        });
+    res.render('blog-post', {
+        logged_in: true,
     });
+});
+
+router.delete('/blog/:id', async (req, res) => {
+    const blog_id = req.params.id;
+
+    try {
+        const deleteBlog = await Blog.findByIdAndDelete(blog_id);
+
+        if (!deleteBlog) {
+            return res.status(404).json({ error: 'Blog post not found' });
+        }
+        
+        res.status(204).send();
+    } catch (err) {
+        console.error('Error deleting blog:', error);
+        res.status(500).json({ error: 'Internal Server Error' })
+    }
+}); 
+
+// renders comment update page 
+router.get('/update', async (req, res) => {
+    res.render('update', {
+        logged_in: true,
+    })
+})
 
 router.get('/dashboard', withAuth, (req, res) => {
     const userData = req.session.user;
 
     res.render('dashboard', {
         user: userData,
-        logged_in: true
+        logged_in: true,
     });
+});
+
+router.get('/update/:commentId', async (req, res) => {
+    try {
+        const commentId = req.params.commentId;
+
+        const comment = await Comment.findByPk(commentId);
+
+        if (!comment) {
+            return res.status(404).send("Comment not found");
+        }
+
+        console.log('Retrieved comment data:', comment);
+        res.render('update', {
+            comment,
+            logged_in: true,
+        });
+       
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {

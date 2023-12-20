@@ -3,16 +3,20 @@
 </div>
 
 {{#each blogs}}
-<section class="user-posts">
-<div class="post-content">
-         <h2>{{title}} </h2>
+  <div class="top-container" id="blog-post" data-blog-id="{{id}}">
+        <div id="blog-title">
+            <h2>{{title}} </h2>
             <h3>{{user.name}}</h3>
             <p><i>Published on {{format_date dateCreated}} </i> </p>
         </div>
         <div class="blog-body" id="content-body">
             <p>{{contentPost}}</p>
         </div>
-</section>
+        <div id="blog-comment">
+            <a href="/blog/{{id}}">Comment</a>
+             <button id="delete-blog" type="submit" class="btn">Delete</button>
+        </div>
+    </div>
 {{/each}}
 
-<script src="/js/blog.js"></script>
+<script src="/js/delete-blog.js"></script>

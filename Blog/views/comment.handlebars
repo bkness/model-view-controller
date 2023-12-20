@@ -15,13 +15,20 @@
         <button id="comment-submit" type="submit" class="comment-card-submit">Submit</button>
     </div>
 </div>
-
 <section class="comment-posts">
-    {{#each blog.comments}}
+    {{#each blog.Comments}}
     <div class="user-comments">
-        <p>{{commentPost}}</p>
-        {{!-- <p><i>Commented by {{this.user.name}} on {{this.dateCreated}}</i></p> --}}
+        <p id="commentText">{{commentPost}}</p>
+        <p><i>Commented by {{user.name}} on {{format_date dateCreated}}</i></p>
+      {{#if (isCommentOwner user.id ../session.user_id)}}
+        <button class="delete-comment-btn" data-comment-id="{{id}}">Delete</button>
+        {{/if}}
     </div>
+
     {{/each}}
 </section>
+
+
+</section>
 <script src="/js/comments.js"></script>
+<script src="/js/delete-comment.js"></script>

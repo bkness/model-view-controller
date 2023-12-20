@@ -2,19 +2,26 @@
     <h1 id="blog-post-text">Blog Posts</h1>
 </b><br>
 <div id="blogs">
-    {{#each blogs}}
+    {{#each blogs as |blog|}}
     <div class="top-container" id="blog-post">
         <div id="blog-title">
-            <h2>{{title}} </h2>
-            <h3>{{user.name}}</h3>
+            <h2>{{blog.title}} </h2>
+            <h3>{{blog.user.name}}</h3>
             <p><i>Published on {{format_date dateCreated}} </i> </p>
         </div>
         <div class="blog-body" id="content-body">
-            <p>{{contentPost}}</p>
+            <p>{{blog.contentPost}}</p>
         </div>
+
         <div id="blog-comment">
             <a href="/blog/{{id}}">Comment</a>
         </div>
     </div>
+    <p>
+        <label id="blog_id" hidden="hidden"> {{blog.id}} </label>
+    </p>
+
     {{/each}}
 </div>
+
+<script src="/js/delete-blog.js"></script>
